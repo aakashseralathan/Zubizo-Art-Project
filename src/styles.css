@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #12090f;
+  --cream: #fff3dd;
+  --gold: #d8a84f;
+  --text: #fff8ee;
+  --muted: #d7c3aa;
+  --glass: rgba(255,255,255,.09);
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top left, rgba(216,168,79,.28), transparent 36%),
+              radial-gradient(circle at bottom right, rgba(246,180,184,.18), transparent 38%),
+              var(--bg);
+  color: var(--text);
+  font-family: Poppins, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 7%;
+}
+
+.brand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.navLinks {
+  display: flex;
+  gap: 24px;
+  color: var(--muted);
+}
+
+.hero {
+  min-height: 100vh;
+}
+
+.heroGrid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 55px;
+  padding: 40px 7% 90px;
+}
+
+.heroText {
+  flex: 1;
+}
+
+.heroText h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(44px, 6vw, 82px);
+  line-height: .95;
+  margin: 18px 0;
+}
+
+.heroText p {
+  color: var(--muted);
+  max-width: 620px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.heroActions {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.primaryBtn,
+.secondaryBtn,
+form button {
+  border: 0;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primaryBtn,
+form button {
+  background: linear-gradient(135deg, var(--gold), #fff1a8);
+  color: #201107;
+}
+
+.secondaryBtn {
+  border: 1px solid rgba(255,255,255,.22);
+  background: var(--glass);
+}
+
+/* NEW BOOK */
+.bookWrapper {
+  width: 400px;
+  height: 500px;
+  position: relative;
+  perspective: 2200px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.bookFront,
+.bookInside {
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+}
+
+.bookFront {
+  background: linear-gradient(135deg, rgba(216,168,79,.22), rgba(246,180,184,.14)),
+              #2b1019;
+  border: 2px solid rgba(216,168,79,.35);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-origin: left center;
+  transition: transform 1.6s cubic-bezier(.22,.61,.36,1);
+  z-index: 10;
+}
+
+.bookWrapper.open .bookFront {
+  transform: rotateY(-170deg);
+}
+
+.bookInside {
+  background: #fff8ec;
+  color: #422417;
+  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: inset 18px 0 35px rgba(0,0,0,.15);
+}
+
+.bookInside span {
+  color: #b77a24;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.bookInside h3,
+.bookFront h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 42px;
+  margin: 12px 0;
+}
+
+.goldCircle {
+  width: 90px;
+  height: 90px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.section {
+  padding: 90px 7%;
+}
+
+.sectionHead {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 44px;
+}
+
+.sectionHead h2,
+.story h2,
+.contact h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(36px, 4vw, 60px);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.inviteCard {
+  min-height: 280px;
+  padding: 30px;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,.18);
+  transition: .35s;
+}
+
+.inviteCard:hover {
+  transform: translateY(-14px) scale(1.02);
+}
+
+.cardIcon {
+  font-size: 48px;
+}
+
+.inviteCard h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+}
+
+.cardGold { background: linear-gradient(135deg, #5f3d10, #c99736); }
+.cardPink { background: linear-gradient(135deg, #7c294d, #e890a8); }
+.cardCream { background: linear-gradient(135deg, #8b6032, #e9c88e); }
+.cardRose { background: linear-gradient(135deg, #6d2930, #d98686); }
+.cardGreen { background: linear-gradient(135deg, #224b37, #8abf87); }
+.cardPurple { background: linear-gradient(135deg, #40215f, #a06bd9); }
+
+.story,
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 42px;
+  align-items: center;
+}
+
+.founderCard,
+.testimonial,
+.enquiryForm {
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.contactList p {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: var(--muted);
+}
+
+.enquiryForm {
+  display: grid;
+  gap: 16px;
+}
+
+input,
+textarea {
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 18px;
+  padding: 15px;
+  background: rgba(0,0,0,.24);
+  color: white;
+}
+
+textarea {
+  min-height: 130px;
+}
+
+.whatsappFloat {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 50;
+  display: flex;
+  gap: 8px;
+  background: #25d366;
+  color: #061d0f;
+  padding: 14px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+footer {
+  text-align: center;
+  padding: 80px 7%;
+}
+
+@media (max-width: 900px) {
+  .heroGrid,
+  .story,
+  .contact {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .cardsGrid,
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .bookWrapper {
+    width: 320px;
+    height: 430px;
+  }
+}
