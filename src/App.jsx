@@ -4,6 +4,7 @@ import { site, invitationTypes, testimonials } from "./data/siteData";
 
 const API_URL = "http://localhost:8080/api/enquiries";
 
+import React from "react";
 function App() {
   const [opened, setOpened] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
